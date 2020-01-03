@@ -70,7 +70,7 @@ sleep 5
 docker-compose up contracts
 
 # copies the addresses.json file out to get a contract's address in the relay's config.toml
-docker run --rm -v "$PWD":/dest -v end2end_shared:/source -w /source alpine cp addresses.json /dest
+docker cp e2e-helper:/shared/addresses.json .
 
 relay_config=config.toml
 address_file=addresses.json
